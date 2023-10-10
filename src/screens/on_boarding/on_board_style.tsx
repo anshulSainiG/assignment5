@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native"
 import { useColorScheme } from "react-native"
 
-export const OnBoardingStyles = StyleSheet.create({
+export const styles = StyleSheet.create({
     mainContainer: {
         width: "100%",
         height: "100%",
