@@ -10,9 +10,11 @@ import { KeyboardAvoidingScrollView } from 'react-native-keyboard-avoiding-scrol
 import { useState } from 'react'
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { SignUpStackParamList } from "../../navigator/naviagtion";
-import { CountryCode } from "../../assests/fonts/country_codes/country _codes"
+
+
 import axios from "../../api/baseapi"
 import { passwordValidation} from "../../utilities/utilities"
+import { CountryCode } from '../../assests/country_codes/country _codes';
 // import CheckBox from 'react-native-check-box';
 
 type itemProps = {
