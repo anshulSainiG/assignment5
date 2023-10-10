@@ -7,12 +7,12 @@ import { SignUpStackParamList } from '../../navigator/naviagtion';
 type LogInSignUpProps = NativeStackScreenProps<SignUpStackParamList,'splashScreen'>
 
 const Splash = ({navigation}:LogInSignUpProps) => {
-  const PressHandler = () =>{        
+  const pressHandler = () =>{        
     navigation.navigate('onboardingScreen');
 }
   return (
     <View style={styles.container}>
-    <TouchableOpacity onPress={PressHandler} >
+    <TouchableOpacity onPress={pressHandler} >
        <Image  source={require("../../assests/image/splash-logo.webp")}/>
       </TouchableOpacity>
     </View>
