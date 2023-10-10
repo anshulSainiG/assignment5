@@ -1,6 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native';
 import Splash from "../screens/splash"
-import OnBoarding from "../screens/0n_boarding";
 import Signin from "../screens/sign_in_mobile";
 import React from 'react';
 
@@ -10,6 +9,7 @@ import { createCox } from "../context_api/context_api";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SignInUsingPassword from "../screens/sign_in_using_mobile";
 import CreateAccount from "../screens/create_account";
+import OnBoarding from '../screens/on_boarding';
 
 
 export type SignUpStackParamList = {

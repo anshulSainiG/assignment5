@@ -1,10 +1,11 @@
 import { Text, View, Image,TouchableOpacity } from 'react-native'
 import React from 'react'
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import {OnBoardingStyles} from "../0n_boarding/onboardstyle"
+
 
 import Button from "../../components/button/button";
 import { SignUpStackParamList } from "../../navigator/naviagtion";
+import { OnBoardingStyles } from './onboardstyle';
 type LogInSignUpProps = NativeStackScreenProps<SignUpStackParamList,'onboardingScreen'>
 
 const OnBoarding = ( {navigation}:LogInSignUpProps) => {
