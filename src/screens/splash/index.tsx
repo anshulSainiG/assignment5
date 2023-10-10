@@ -2,7 +2,7 @@ import { Image, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import{styles}from "./style"
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { SignUpStackParamList } from "../../Navigator/naviagtion";
+import { SignUpStackParamList } from '../../navigator/naviagtion';
 
 type LogInSignUpProps = NativeStackScreenProps<SignUpStackParamList,'splashScreen'>
 

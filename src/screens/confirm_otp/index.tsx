@@ -5,9 +5,9 @@ import axios from "../../api/baseapi"
 import Head from "../../components/mainhead/head";
 import Button from "../../components/button/button";
 import { styles } from './style';
-import { SignUpStackParamList } from "../../Navigator/naviagtion";
+import { SignUpStackParamList } from "../../navigator/naviagtion";
 import { KeyboardAvoidingScrollView } from 'react-native-keyboard-avoiding-scroll-view';
-import { createCox } from '../../contextapi/contextapi';
+import { createCox } from '../../context_api/context_api';
 type LogInSignUpProps = NativeStackScreenProps<SignUpStackParamList, 'confirmotp'>
 
 const ConfirmOtp = ({ navigation }: LogInSignUpProps) => {

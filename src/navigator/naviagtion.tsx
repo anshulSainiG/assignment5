@@ -4,9 +4,9 @@ import OnBoarding from "../screens/0n_boarding";
 import Signin from "../screens/sign_in_mobile";
 import React from 'react';
 
-import ConfirmOtp from "../../src/screens/confirm_otp";
+import ConfirmOtp from "../screens/confirm_otp";
 
-import { createCox } from "../contextapi/contextapi";
+import { createCox } from "../context_api/context_api";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SignInUsingPassword from "../screens/sign_in_using_mobile";
 import CreateAccount from "../screens/create_account";

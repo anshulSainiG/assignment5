@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import Context from './src/contextapi/contextapi';
-import { MyStack } from "./src/Navigator/naviagtion";
+import Context from './src/context_api/context_api';
+import { MyStack } from "./src/navigator/naviagtion";
 // import Splash from "./screens/splash"
 // import Onboarding from "./screens/Onboarding"
 // import Createaccount from "./screens/createaccount/index"

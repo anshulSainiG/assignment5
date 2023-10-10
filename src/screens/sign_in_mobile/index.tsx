@@ -4,8 +4,8 @@ import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { styles } from "./style"
 import Button from "../../components/button/button";
 import Head from "../../components/mainhead/head";
-import { createCox } from "../../contextapi/contextapi";
-import { SignUpStackParamList } from '../../Navigator/naviagtion'
+import { createCox } from "../../context_api/context_api";
+import { SignUpStackParamList } from '../../navigator/naviagtion'
 type LogInSignUpProps = NativeStackScreenProps<SignUpStackParamList, 'signinnumber'>
 
 const Signin = ({ navigation }: LogInSignUpProps) => {

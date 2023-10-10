@@ -3,10 +3,10 @@ import React, { useContext } from 'react'
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import { styles } from "./styles"
-import { createCox } from '../../contextapi/contextapi';
+import { createCox } from '../../context_api/context_api';
 import Head from '../../components/mainhead/head';
 import Button from '../../components/button/button';
-import { SignUpStackParamList } from "../../Navigator/naviagtion";
+import { SignUpStackParamList } from "../../navigator/naviagtion";
 import axios from "../../api/baseapi"
 
 

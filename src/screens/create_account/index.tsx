@@ -3,13 +3,13 @@ import React, { SetStateAction, useContext, Dispatch, useEffect } from 'react';
 import { styles } from "./styles";
 import Button from "../../components/button/button"
 import Head from "../../components/mainhead/head";
-import { createCox } from "../../contextapi/contextapi";
+import { createCox } from "../../context_api/context_api";
 import AntDesign from "react-native-vector-icons/AntDesign"
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5"
 import { KeyboardAvoidingScrollView } from 'react-native-keyboard-avoiding-scroll-view';
 import { useState } from 'react'
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { SignUpStackParamList } from "../../Navigator/naviagtion";
+import { SignUpStackParamList } from "../../navigator/naviagtion";
 import { CountryCode } from "../../assests/fonts/country_codes/country _codes"
 import axios from "../../api/baseapi"
 import { passwordValidation} from "../../utilities/utilities"
