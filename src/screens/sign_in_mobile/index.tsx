@@ -26,7 +26,7 @@ const Signin = ({ navigation }: LogInSignUpProps) => {
                 <Button name={"GenerateOTP"}  naviagate={PressHandler} backgroundcolor={"#6A1B1E"} color={"white"} />
              </View>
             <View style={styles.signin}>
-                <Text style={styles.signintext}>
+                <Text style={styles.signintext} onPress={PressHandler}>
                     New User?<Text style={{fontWeight:"bold"}}>Sign UP</Text> 
                 </Text>
             </View>
