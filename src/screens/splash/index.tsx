@@ -13,7 +13,7 @@ const Splash = ({navigation}:LogInSignUpProps) => {
   return (
     <View style={styles.container}>
     <TouchableOpacity onPress={PressHandler} >
-       <Image  source={require("../../assests/fonts/image/splashlogo.webp")}/>
+       <Image  source={require("../../assests/image/splash-logo.webp")}/>
       </TouchableOpacity>
     </View>
   )

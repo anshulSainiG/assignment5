@@ -18,7 +18,7 @@ const OnBoarding = ( {navigation}:LogInSignUpProps) => {
             <Text style={ OnBoardingStyles.name}>Catalyst</Text>
             </View>
             <View style={ OnBoardingStyles.image}>
-            <Image source={require("../../assests/fonts/image/Group.png")} />
+            <Image source={require("../../assests/image/group.png")} />
             </View>
             <View style={ OnBoardingStyles.textcontainer}>
                 <Text style={ OnBoardingStyles.strategy}>STRATEGIZE</Text>
