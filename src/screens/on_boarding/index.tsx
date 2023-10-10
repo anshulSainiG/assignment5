@@ -5,7 +5,7 @@ import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import Button from "../../components/button/button";
 import { SignUpStackParamList } from "../../navigator/naviagtion";
-import { styles } from './on_board_style';
+import { styles } from './style';
 type LogInSignUpProps = NativeStackScreenProps<SignUpStackParamList,'onboardingScreen'>
 
 const OnBoarding = ( {navigation}:LogInSignUpProps) => {
