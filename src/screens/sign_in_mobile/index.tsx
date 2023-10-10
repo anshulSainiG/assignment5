@@ -15,18 +15,18 @@ const Signin = ({ navigation }: LogInSignUpProps) => {
     }
     return (
 
-        <View style={styles.maincontainer}>
+        <View style={styles.mainContainer}>
             <Head name={"SIGN IN"}  name1='Catalyst' name2='SIGN IN WITH' name3='MOBILE NUMBER'/>
-            <View style={styles.textfield}>
+            <View style={styles.textField}>
                 <View>
-                <Text style={styles.textname}>Enter Phone Number</Text>
-                <TextInput style={styles.textinput} value={useConx.phoneno}  onChangeText={(text)=>useConx.setPhoneno(text)} />
+                <Text style={styles.textName}>Enter Phone Number</Text>
+                <TextInput style={styles.textInput} value={useConx.phoneno}  onChangeText={(text)=>useConx.setPhoneno(text)} />
                 </View>
                 <View style={styles.button}>
                 <Button name={"GenerateOTP"}  naviagate={PressHandler} backgroundcolor={"#6A1B1E"} color={"white"} />
              </View>
-            <View style={styles.signin}>
-                <Text style={styles.signintext} onPress={PressHandler}>
+            <View style={styles.signIn}>
+                <Text style={styles.signInText} onPress={PressHandler}>
                     New User?<Text style={{fontWeight:"bold"}}>Sign UP</Text> 
                 </Text>
             </View>

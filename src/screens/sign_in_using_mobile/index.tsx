@@ -17,13 +17,13 @@ const Signinusingpassword = () => {
     
     return (
 
-        <View style={styles.maincontainer}>
+        <View style={styles.mainContainer}>
             <Head name={"SIGN IN"}  name1='Catalyst' name2='SIGN IN WITH' name3='CATALYST ID'/>
-            <View style={styles.textfield}>
-                <Text style={styles.textname}>Enter Username</Text>
-                <TextInput style={styles.textinput} value={useConx.name} onChangeText={(text)=>useConx.setName(text)}/>
-                <Text style={styles.textname}>Enter Password </Text>
-                <TextInput style={styles.textinput}  value={useConx.passwordd} onChangeText={(text)=>useConx.setPassword(text)} />
+            <View style={styles.textField}>
+                <Text style={styles.textName}>Enter Username</Text>
+                <TextInput style={styles.textInput} value={useConx.name} onChangeText={(text)=>useConx.setName(text)}/>
+                <Text style={styles.textName}>Enter Password </Text>
+                <TextInput style={styles.textInput}  value={useConx.passwordd} onChangeText={(text)=>useConx.setPassword(text)} />
                 <View style={{alignItems:"flex-end",paddingRight:26,paddingVertical:5}}>
                     <Text style={{color:"black",textDecorationLine:"underline"}}>Forgot Password?</Text>
                 </View>
@@ -32,8 +32,8 @@ const Signinusingpassword = () => {
                         throw new Error('Function not implemented.');
                     } } />
              </View>
-            <View style={styles.signin}>
-                <Text style={styles.signintext}>
+            <View style={styles.signIn}>
+                <Text style={styles.signInText}>
                     New User?<Text style={{fontWeight:"bold"}}>Sign Up</Text>
                 </Text>
             </View>

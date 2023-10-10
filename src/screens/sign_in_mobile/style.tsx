@@ -1,16 +1,16 @@
 import { StyleSheet } from "react-native";
 export  const styles = StyleSheet.create({
-    maincontainer: {
+    mainContainer: {
         height: "100%",
         width: "100%"
     },
-    mainheading: {
+    mainHeading: {
         // backgroundColor:"blue",
         height: "10%",
         justifyContent: "flex-end"
 
     },
-    maintext: {
+    mainText: {
         fontSize: 30,
         color: "#6A1B1E",
         paddingLeft: 19,
@@ -33,20 +33,20 @@ export  const styles = StyleSheet.create({
         fontWeight: "bold",
         fontSize: 28
     },
-    textfield:{
+    textField:{
         backgroundColor:"#F3F4F9",
         height:"70%",
         // backgroundColor:"blue"
       
     
       },
-      textname:{
+      textName:{
       marginTop:20,
         paddingLeft:20,
         color:"#24272B",
         fontSize:15
       },
-      textinput:{
+      textInput:{
         borderwidth:2,
         backgroundColor:"#FFFFFF",
         width:"90%",
@@ -58,14 +58,14 @@ export  const styles = StyleSheet.create({
         color:'black'
       },
     
-    signin:{
+    signIn:{
         alignItems:"center",
         // backgroundColor:"orange",
         height:"60%",
         justifyContent:"flex-end"
     
       },
-      signintext:{
+      signInText:{
         // fontWeight:"bold",
         color:"#000000"
       },
