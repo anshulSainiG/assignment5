@@ -11,13 +11,13 @@ type ContextState= {
   phoneno: string;
   passwordd: string;
   otpPassword:string;
-  dialcode:string;
+  dialCode:string;
   
   setName:Dispatch<SetStateAction<string>>;
   setPhoneno:Dispatch<SetStateAction<string>>;
   setPassword:Dispatch<SetStateAction<string>>;
   setOtpPassword:Dispatch<SetStateAction<string>>;
-  setDialcode:Dispatch<SetStateAction<string>>;
+  setDialCode:Dispatch<SetStateAction<string>>;
 }
 
 // Create a context
@@ -26,12 +26,12 @@ export const createCox = createContext<ContextState>({
     phoneno:"",
     passwordd:"",
     otpPassword:"",
-    dialcode:"",
+    dialCode:"",
     setName:() => {},
   setPhoneno:()=>{},
   setPassword:()=>{},
   setOtpPassword:()=>{},
-  setDialcode:()=>{},
+  setDialCode:()=>{},
 });
 
 export default function Context({ children }: ContextProps) {
@@ -39,19 +39,19 @@ export default function Context({ children }: ContextProps) {
   const [phoneno, setPhoneno] = useState<string>('');
   const [passwordd, setPassword] = useState<string>('');
   const [otpPassword, setOtpPassword] = useState<string>('');
-  const [dialcode, setDialcode] = useState<string>('+1')
+  const [dialCode, setDialCode] = useState<string>('+1')
 
   const value: ContextState = {
     name,
     phoneno,
     passwordd,
-    dialcode,
+    dialCode,
     setName,
   setPhoneno,
   setPassword,
   otpPassword,
   setOtpPassword,
-  setDialcode,
+  setDialCode,
   };
 
   return (

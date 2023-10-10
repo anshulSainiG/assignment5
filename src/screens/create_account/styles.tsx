@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
-  maincontainer: {
+  mainContainer: {
     width: "100%",
     height: "100%"
   },
@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
   text: {
     color: "black"
   },
-  inputtext2: {
+  inputText2: {
     borderWidth: 1,
     marginVertical: 12,
     borderColor: "white",
@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     borderRadius:4,
     color:"black"
   },
-  inputtext3: {
+  inputText3: {
     borderWidth: 1,
     marginVertical: 12,
     borderColor: "white",
@@ -34,10 +34,10 @@ export const styles = StyleSheet.create({
   },
 
 
-  checkbox: {
+  checkBox: {
     flexDirection: "row", padding:20
   },
-  innercheckbox: {
+  innerCheckBox: {
     height: 20,
     width: 22,
   
@@ -50,7 +50,7 @@ export const styles = StyleSheet.create({
     
     
   },
-  checkboxtext:{
+  checkBoxText:{
     paddingLeft:5,
     color:"black"
   },
@@ -58,7 +58,7 @@ export const styles = StyleSheet.create({
     textAlign:'justify',
     // backgroundColor:"blue"
   },
-  signintext:{
+  signInText:{
     textAlign:'center',
     color:"black",
      fontWeight:"bold",
@@ -68,7 +68,7 @@ export const styles = StyleSheet.create({
 
      
   },
-  inputtext1:{
+  inputText1:{
     borderWidth: 1,
     borderColor: "white",
     backgroundColor: "white",
@@ -78,7 +78,7 @@ export const styles = StyleSheet.create({
     fontSize:16,
     
   },
-  checkboxContainer: {
+  checkBoxContainer: {
     flexDirection: 'row',
     // marginBottom: 10,
     paddingLeft:2,

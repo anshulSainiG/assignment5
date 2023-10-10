@@ -42,17 +42,17 @@ export type LogInSignUpProps = NativeStackScreenProps<SignUpStackParamList, 'cre
 
 
 const Createaccount = ({ navigation }: LogInSignUpProps) => {
-  const { name, phoneno, passwordd,dialcode,setDialcode,setOtpPassword } = useContext(createCox)
+  const { name, phoneno, passwordd,dialCode,setDialCode,setOtpPassword } = useContext(createCox)
   const useConx = useContext(createCox);
-  const [showmodal, setShowmodal] = useState(false)
-  // const [dialcode, setDialcode] = useState('+1')
+  const [showModal, setShowModal] = useState(false)
+  // const [dialcode, setDialCode] = useState('+1')
   const [isPressed, setIsPressed] = useState(false);
   const [check, setCheck] = useState(false);
-  const[showpassword,setShowPassword]=useState(false)
+  const[showPassword,setShowPassword]=useState(false)
 
 
-  const IconPressed=()=>{
-    setShowPassword(!showpassword)
+  const iconPressed=()=>{
+    setShowPassword(!showPassword)
 
   }
 
@@ -68,13 +68,13 @@ const Createaccount = ({ navigation }: LogInSignUpProps) => {
   // }
 
 
-  const signin = {
+  const signIn = {
     "fullName": name,
     "phoneNumber": phoneno,
-    "countryCode": dialcode,
+    "countryCode": dialCode,
     "password": passwordd,
   }
-  const handlenavigation = () => {
+  const handleNavigation = () => {
    
     if( passwordValidation(name,phoneno,passwordd))
     {
@@ -92,7 +92,7 @@ const Createaccount = ({ navigation }: LogInSignUpProps) => {
     console.log()
     try{
 
-     const response:Root= await (await axios.post('/api/v1/users/sign-up/mobile', signin)).data
+     const response:Root= await (await axios.post('/api/v1/users/sign-up/mobile', signIn)).data
         //  .then(({ data }) => {
         //   if (data.status === "success") {
         //    console.log(data)
@@ -116,18 +116,18 @@ const Createaccount = ({ navigation }: LogInSignUpProps) => {
 
 
 
-  const OnClick = (item: itemProps) => {
+  const onClick = (item: itemProps) => {
 
-    setDialcode(item.dial_code)
+    setDialCode(item.dial_code)
 
-    setShowmodal(false)
+    setShowModal(false)
 
   }
 
 
   return (
     // <ScrollView style={{flex:1}}>
-    <View style={styles.maincontainer}>
+    <View style={styles.mainContainer}>
 
       <Head name={"SIGN UP"} name1='Catalyst' name2='CREATE YOUR ' name3='ACCOUNT' />
 
@@ -138,20 +138,20 @@ const Createaccount = ({ navigation }: LogInSignUpProps) => {
 
 
         <Text style={styles.text}>Full Name</Text>
-        <TextInput style={styles.inputtext2} onChangeText={useConx.setName}  />
+        <TextInput style={styles.inputText2} onChangeText={useConx.setName}  />
         <Text style={styles.text}>Phone Number</Text>
 
         <View style={{ width: "100%", flexDirection: 'row', height: 50, backgroundColor: "white", marginVertical: 8 }} >
           <View style={{width:"25%",flexDirection:"row"}}>
-          <Text style={{  color: "black", verticalAlign: 'middle',paddingLeft:15 }}>{dialcode}</Text>
+          <Text style={{  color: "black", verticalAlign: 'middle',paddingLeft:15 }}>{dialCode}</Text>
 
-          <Pressable style={{ backgroundColor: "white", justifyContent: "center",paddingLeft:5}} onPress={() => setShowmodal(true)}>
+          <Pressable style={{ backgroundColor: "white", justifyContent: "center",paddingLeft:5}} onPress={() => setShowModal(true)}>
 
             <AntDesign name="down" color="black" size={20} />
           </Pressable>
           </View>
           <View style={{width:"75%"}}>
-          <TextInput style={styles.inputtext1} onChangeText={useConx.setPhoneno} keyboardType="numeric"/>
+          <TextInput style={styles.inputText1} onChangeText={useConx.setPhoneno} keyboardType="numeric"/>
           </View>
 
         </View>
@@ -162,11 +162,11 @@ const Createaccount = ({ navigation }: LogInSignUpProps) => {
 
         <Text style={styles.text}>Password</Text>
         <View style={{flexDirection:"row",justifyContent:"space-between",alignItems:"center"}}>
-        <TextInput style={styles.inputtext3} onChangeText={(text) => useConx.setPassword(text)}  secureTextEntry={!showpassword} />
-        <Pressable style={{backgroundColor:"white",height:50,justifyContent:"center",paddingRight:18,borderTopRightRadius:4,borderBottomEndRadius:4}} onPress={IconPressed} >
+        <TextInput style={styles.inputText3} onChangeText={(text) => useConx.setPassword(text)}  secureTextEntry={!showPassword} />
+        <Pressable style={{backgroundColor:"white",height:50,justifyContent:"center",paddingRight:18,borderTopRightRadius:4,borderBottomEndRadius:4}} onPress={iconPressed} >
     
             
-              <FontAwesome5 name={showpassword?"eye":"eye-slash"}  color="black" size={20} />
+              <FontAwesome5 name={showPassword?"eye":"eye-slash"}  color="black" size={20} />
 
             
         
@@ -175,9 +175,9 @@ const Createaccount = ({ navigation }: LogInSignUpProps) => {
         </View>
 
     
-          <View style={[styles.checkboxContainer]}>
+          <View style={[styles.checkBoxContainer]}>
       
-            <Pressable style={[styles.innercheckbox,{backgroundColor: isPressed ? '#6A1B1E' : 'white'}]} onPress={handlePress}>
+            <Pressable style={[styles.innerCheckBox,{backgroundColor: isPressed ? '#6A1B1E' : 'white'}]} onPress={handlePress}>
                 {
 
                 check ?
@@ -188,11 +188,11 @@ const Createaccount = ({ navigation }: LogInSignUpProps) => {
                   
                 }
             </Pressable>
-            <Text style={styles.checkboxtext}>I agree to the <Text style={{ color: "black", fontWeight: "bold", textDecorationLine: "underline" }}>Terms</Text> and <Text style={{ color: "black", fontWeight: "bold", textDecorationLine: "underline" }}>PrivacyPolicy</Text></Text>
+            <Text style={styles.checkBoxText}>I agree to the <Text style={{ color: "black", fontWeight: "bold", textDecorationLine: "underline" }}>Terms</Text> and <Text style={{ color: "black", fontWeight: "bold", textDecorationLine: "underline" }}>PrivacyPolicy</Text></Text>
           </View>
 
           <View style={{ height: '14%', width: "100%"}}>
-            <Button name={"SignUp"} naviagate={handlenavigation} backgroundcolor={"#6A1B1E"} color={"white"} />
+            <Button name={"SignUp"} naviagate={handleNavigation} backgroundcolor={"#6A1B1E"} color={"white"} />
           </View>
           <View >
             <Text style={styles.para}>By agreeing to the above terms,you are consenting that your
@@ -200,10 +200,10 @@ const Createaccount = ({ navigation }: LogInSignUpProps) => {
               Union on behalf of sparity,Properties,Inc</Text>
           </View>
           <View style={{flexDirection:'row',justifyContent:"center",paddingTop:50}}>
-          <Text style={styles.signintext}>
+          <Text style={styles.signInText}>
             Existing User?    
           </Text>
-            <Pressable style={{alignSelf:'center',}}onPress={handlenavigation}><Text style={{textDecorationLine:"underline",fontWeight:"bold",color:"black",}}> Sign In</Text></Pressable>
+            <Pressable style={{alignSelf:'center',}}onPress={handleNavigation}><Text style={{textDecorationLine:"underline",fontWeight:"bold",color:"black",}}> Sign In</Text></Pressable>
             </View>
 
 
@@ -211,12 +211,12 @@ const Createaccount = ({ navigation }: LogInSignUpProps) => {
         </View>
       </View >
       <Modal transparent={false}
-        visible={showmodal}>
+        visible={showModal}>
 
         <View style={{ height: "100%", width: "100%" }}>
           <FlatList
             data={CountryCode}
-            renderItem={({ item }) => <Pressable style={{ marginVertical:15 }} onPress={() => OnClick(item)}>
+            renderItem={({ item }) => <Pressable style={{ marginVertical:15 }} onPress={() => onClick(item)}>
 
               <Text style={{ fontSize: 15, fontWeight: "bold", color: "black",textAlign:"center" }}>{item.dial_code}</Text>
 

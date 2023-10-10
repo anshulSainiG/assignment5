@@ -9,25 +9,25 @@ import { OnBoardingStyles } from './on_board_style';
 type LogInSignUpProps = NativeStackScreenProps<SignUpStackParamList,'onboardingScreen'>
 
 const OnBoarding = ( {navigation}:LogInSignUpProps) => {
-    const PressHandler = () =>{        
+    const pressHandler = () =>{        
         navigation.navigate('createaccount');
     }
     return (
-        <View style={ OnBoardingStyles.maincontainer}>
-            <View style={ OnBoardingStyles.maintext}>
+        <View style={ OnBoardingStyles.mainContainer}>
+            <View style={ OnBoardingStyles.mainText}>
             <Text style={ OnBoardingStyles.name}>Catalyst</Text>
             </View>
             <View style={ OnBoardingStyles.image}>
             <Image source={require("../../assests/image/group.png")} />
             </View>
-            <View style={ OnBoardingStyles.textcontainer}>
+            <View style={ OnBoardingStyles.textContainer}>
                 <Text style={ OnBoardingStyles.strategy}>STRATEGIZE</Text>
-                <Text style={ OnBoardingStyles.yourgame}>YOUR GAME</Text>
+                <Text style={ OnBoardingStyles.yourGame}>YOUR GAME</Text>
                 <Text style={ OnBoardingStyles.para}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita facilis fugit,
                     obcaecati neque</Text>
             </View>
             <Button name={"Login"} naviagate={()=>{}} backgroundcolor={"#6A1B1E"} color={"white"} />
-            <Button name={"SignUp"}  naviagate={PressHandler} backgroundcolor={"white"} color={"#6A1B1E"}/>
+            <Button name={"SignUp"}  naviagate={pressHandler} backgroundcolor={"white"} color={"#6A1B1E"}/>
             
         </View>
     )

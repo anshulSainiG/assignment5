@@ -2,13 +2,13 @@ import { StyleSheet } from "react-native"
 import { useColorScheme } from "react-native"
 
 export const OnBoardingStyles = StyleSheet.create({
-    maincontainer: {
+    mainContainer: {
         width: "100%",
         height: "100%",
         backgroundColor:"white",
 
     },
-    maintext: {
+    mainText: {
         height: "7%",
         // backgroundColor:"red",
         justifyContent: "flex-end"
@@ -33,7 +33,7 @@ export const OnBoardingStyles = StyleSheet.create({
 
     },
 
-    textcontainer: {
+    textContainer: {
         // marginTop: 40,
         paddingLeft: 25,
         height: "38%",
@@ -51,7 +51,7 @@ export const OnBoardingStyles = StyleSheet.create({
         fontWeight: "bold"
 
     },
-    yourgame: {
+    yourGame: {
         fontSize: 35,
         color: "#333333"
 
@@ -73,7 +73,7 @@ export const OnBoardingStyles = StyleSheet.create({
 
     },
 
-    loginbtn: {
+    logInBtn: {
         width: "90%",
         backgroundColor: "#6A1B1E",
         borderRadius: 4,
@@ -86,7 +86,7 @@ export const OnBoardingStyles = StyleSheet.create({
 
     },
 
-    logintext: {
+    logInText: {
         alignSelf: "center",
         // color: "white",
 
@@ -107,7 +107,7 @@ export const OnBoardingStyles = StyleSheet.create({
     //     textAlign: "center",
     //     color: "#6A1B1E",
     // },
-    buttoncolor:{
+    buttonColor:{
         backgroundColor:"white"
     }
 

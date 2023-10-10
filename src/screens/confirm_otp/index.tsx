@@ -11,8 +11,8 @@ import { createCox } from '../../context_api/context_api';
 type LogInSignUpProps = NativeStackScreenProps<SignUpStackParamList, 'confirmotp'>
 
 const ConfirmOtp = ({ navigation }: LogInSignUpProps) => {
-    const { otpPassword, phoneno, dialcode } = useContext(createCox)
-    const [validotp, setValidOtp] = useState("")
+    const { otpPassword, phoneno, dialCode } = useContext(createCox)
+    const [validOtp, setValidOtp] = useState("")
     const useConx = useContext(createCox);
 
 
@@ -22,8 +22,8 @@ const ConfirmOtp = ({ navigation }: LogInSignUpProps) => {
     const input3 = useRef<TextInput>(null);
     const input4 = useRef<TextInput>(null);
 
-    const signin = {
-        "countryCode": dialcode,
+    const signIn = {
+        "countryCode": dialCode,
         "phoneNumber": phoneno,
         "otpPassword": otpPassword
     }
@@ -36,8 +36,8 @@ const ConfirmOtp = ({ navigation }: LogInSignUpProps) => {
     };
 
 
-    const PressHandler = () => {
-        if (otpPassword === validotp) {
+    const pressHandler = () => {
+        if (otpPassword === validOtp) {
 
             navigation.navigate('signpassword')
         } else {
@@ -47,7 +47,7 @@ const ConfirmOtp = ({ navigation }: LogInSignUpProps) => {
     const postSignUpApi = async () => {
         console.log()
         try {
-            await axios.post('/api/v1/users/verify-otp', signin)
+            await axios.post('/api/v1/users/verify-otp', signIn)
                 .then(({ data }) => {
                     if (data.status === "success") {
                         console.log(data)
@@ -63,15 +63,15 @@ const ConfirmOtp = ({ navigation }: LogInSignUpProps) => {
     }
     return (
 
-        <View style={styles.maincontainer}>
+        <View style={styles.mainContainer}>
 
             <Head name={"SIGN IN"} name1='Catalyst' name2='SIGN IN WITH' name3='MOBILE NUMBER' />
 
 
-            <View style={styles.textfield}>
-                <Text style={styles.textname}>Enter 4 digit OTP send on your number</Text>
+            <View style={styles.textField}>
+                <Text style={styles.textName}>Enter 4 digit OTP send on your number</Text>
                 <View style={{ flexDirection: "row", justifyContent: "space-around", paddingTop: 10 }}>
-                    <View style={styles.innertextfield}>
+                    <View style={styles.innerTextField}>
                         <TextInput style={{ flex: 1, color: "black", textAlign: "center", fontWeight: "bold" }} keyboardType="numeric"
                             ref={input1} onChangeText={(text) => {
                                 if (text.length == 1) {
@@ -80,7 +80,7 @@ const ConfirmOtp = ({ navigation }: LogInSignUpProps) => {
                                 }
                             }} />
                     </View>
-                    <View style={styles.innertextfield}>
+                    <View style={styles.innerTextField}>
                         <TextInput style={{ flex: 1, color: "black", textAlign: "center", fontWeight: "bold" }} keyboardType="numeric" maxLength={1} ref={input2}
                             onChangeText={(text) => {
                                 if (text.length == 1) {
@@ -96,7 +96,7 @@ const ConfirmOtp = ({ navigation }: LogInSignUpProps) => {
 
                         />
                     </View>
-                    <View style={styles.innertextfield}>
+                    <View style={styles.innerTextField}>
                         <TextInput style={{ flex: 1, color: "black", textAlign: "center", fontWeight: "bold" }} keyboardType="numeric" maxLength={1} ref={input3}
                             onChangeText={(text) => {
                                 if (text.length == 1) {
@@ -108,7 +108,7 @@ const ConfirmOtp = ({ navigation }: LogInSignUpProps) => {
                                 }
                             }} />
                     </View>
-                    <View style={styles.innertextfield}>
+                    <View style={styles.innerTextField}>
                         <TextInput style={{ flex: 1, color: "black", textAlign: "center", fontWeight: "bold" }} keyboardType="numeric" maxLength={1} ref={input4}
                             onChangeText={(text) => {
                                 if (text.length == 1) {
@@ -121,10 +121,10 @@ const ConfirmOtp = ({ navigation }: LogInSignUpProps) => {
 
                 </View>
                 <View style={styles.button}>
-                    <Button name={"Confirm OTP"} naviagate={PressHandler} backgroundcolor={"#6A1B1E"} color={"white"} />
+                    <Button name={"Confirm OTP"} naviagate={pressHandler} backgroundcolor={"#6A1B1E"} color={"white"} />
                 </View>
-                <View style={styles.signin}>
-                    <Text style={styles.signintext}>
+                <View style={styles.signIn}>
+                    <Text style={styles.signInText}>
                         New User?<Text style={{ fontWeight: "bold" }}>Sign Up</Text>
                     </Text>
                 </View>
