@@ -13,6 +13,8 @@ import { SignUpStackParamList } from "../../navigator/naviagtion"
 import axios from "../../api/baseapi"
 import { passwordValidation } from "../../utilities/utilities"
 import { CountryCode } from '../../assests/country_codes/country _codes';
+import { Root } from '../../assests/data_model/data_model';
+
 
 type itemProps = {
   name: string;
@@ -20,15 +22,7 @@ type itemProps = {
   code: string;
 }
 
-export type Root = {
-  status: string
-  data: Data2
-}
 
-export type Data2 = {
-  otp: string
-  uuid: string
-}
 
 
 export type LogInSignUpProps = NativeStackScreenProps<SignUpStackParamList, 'createAccount'>
@@ -96,7 +90,7 @@ const CreateAccount:React.FC<LogInSignUpProps> = (props) => {
 
 
         <View style={styles.body}>
-          <View style={{ padding: 15 }}>
+          <View style={styles.innerContainer}>
 
 
 
@@ -104,24 +98,24 @@ const CreateAccount:React.FC<LogInSignUpProps> = (props) => {
             <TextInput style={styles.inputText2} onChangeText={useConx.setName} />
             <Text style={styles.text}>Phone Number</Text>
 
-            <View style={{ width: "100%", flexDirection: 'row', height: 50, backgroundColor: "white", marginVertical: 8 }} >
-              <View style={{ width: "25%", flexDirection: "row" }}>
-                <Text style={{ color: "black", verticalAlign: 'middle', paddingLeft: 15 }}>{dialCode}</Text>
+            <View style={styles.phoneNoTextField} >
+              <View style={styles.innerPhoneNoTextField}>
+                <Text style={styles.innerPhoneNoTextFieldText}>{dialCode}</Text>
 
-                <Pressable style={{ backgroundColor: "white", justifyContent: "center", paddingLeft: 5 }} onPress={() => setShowModal(true)}>
+                <Pressable style={styles.innerPhonenoTextFieldPressable} onPress={() => setShowModal(true)}>
 
                   <AntDesign name="down" color="black" size={20} />
                 </Pressable>
               </View>
-              <View style={{ width: "75%" }}>
+              <View style={styles.innerPhonenoTextFieldView}>
                 <TextInput style={styles.inputText1} onChangeText={useConx.setPhoneNo} keyboardType="numeric" />
               </View>
 
             </View>
             <Text style={styles.text}>Password</Text>
-            <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+            <View style={styles.innerPasswordView}>
               <TextInput style={styles.inputText3} onChangeText={(text) => useConx.setPassword(text)} secureTextEntry={!showPassword} />
-              <Pressable style={{ backgroundColor: "white", height: 50, justifyContent: "center", paddingRight: 18, borderTopRightRadius: 4, borderBottomEndRadius: 4 }} onPress={iconPressed} >
+              <Pressable style={styles.innerPasswordBtn} onPress={iconPressed} >
 
 
                 <FontAwesome5 name={showPassword ? "eye" : "eye-slash"} color="black" size={20} />
@@ -149,7 +143,7 @@ const CreateAccount:React.FC<LogInSignUpProps> = (props) => {
               <Text style={styles.checkBoxText}>I agree to the <Text style={{ color: "black", fontWeight: "bold", textDecorationLine: "underline" }}>Terms</Text> and <Text style={{ color: "black", fontWeight: "bold", textDecorationLine: "underline" }}>PrivacyPolicy</Text></Text>
             </View>
 
-            <View style={{ height: '14%', width: "100%" }}>
+            <View style={styles.btnView}>
               <Button name={"SignUp"} naviagate={handleNavigation} backgroundcolor={"#6A1B1E"} color={"white"} />
             </View>
             <View >
@@ -157,11 +151,11 @@ const CreateAccount:React.FC<LogInSignUpProps> = (props) => {
                 personal information will be collected,and stored,processed in the United States and the European
                 Union on behalf of sparity,Properties,Inc</Text>
             </View>
-            <View style={{ flexDirection: 'row', justifyContent: "center", paddingTop: 50 }}>
+            <View style={styles.signInTextView}>
               <Text style={styles.signInText}>
                 Existing User?
               </Text>
-              <Pressable style={{ alignSelf: 'center', }} onPress={handleNavigation}><Text style={{ textDecorationLine: "underline", fontWeight: "bold", color: "black", }}> Sign In</Text></Pressable>
+              <Pressable style={styles.signInTextBtn} onPress={handleNavigation}><Text style={styles.signInTextBtn_}> Sign In</Text></Pressable>
             </View>
 
 
@@ -171,12 +165,12 @@ const CreateAccount:React.FC<LogInSignUpProps> = (props) => {
         <Modal transparent={false}
           visible={showModal}>
 
-          <View style={{ height: "100%", width: "100%" }}>
+          <View style={styles.modalMainContainer}>
             <FlatList
               data={CountryCode}
-              renderItem={({ item }) => <Pressable style={{ marginVertical: 15 }} onPress={() => onClick(item)}>
+              renderItem={({ item }) => <Pressable style={styles.modalMainContainerBtn} onPress={() => onClick(item)}>
 
-                <Text style={{ fontSize: 15, fontWeight: "bold", color: "black", textAlign: "center" }}>{item.dial_code}</Text>
+                <Text style={styles.modalMainContainerText}>{item.dial_code}</Text>
               </Pressable>}
               keyExtractor={item => item.code}
             />
@@ -188,9 +182,5 @@ const CreateAccount:React.FC<LogInSignUpProps> = (props) => {
 
     )
   }
-
-
-
-
 
   export default CreateAccount
