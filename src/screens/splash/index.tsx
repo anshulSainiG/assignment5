@@ -6,9 +6,10 @@ import { SignUpStackParamList } from '../../navigator/naviagtion';
 
 type LogInSignUpProps = NativeStackScreenProps<SignUpStackParamList,'splashScreen'>
 
-const Splash = ({navigation}:LogInSignUpProps) => {
+const Splash:React.FC<LogInSignUpProps> = (props) => {
+  const {navigation}=props
   const pressHandler = () =>{        
-    navigation.navigate('onboardingScreen');
+    navigation.navigate('onBoarding');
 }
   return (
     <View style={styles.container}>

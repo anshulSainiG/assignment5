@@ -5,7 +5,7 @@ export  const styles = StyleSheet.create({
         width: "100%"
     },
     mainHeading: {
-        // backgroundColor:"blue",
+      
         height: "10%",
         justifyContent: "flex-end"
 
@@ -14,13 +14,10 @@ export  const styles = StyleSheet.create({
         fontSize: 30,
         color: "#6A1B1E",
         paddingLeft: 19,
-        // paddingTop: 40,
         fontWeight: "bold"
 
     },
     account: {
-
-        //  backgroundColor:"red",
         height: "15%",
         justifyContent: "center"
 
@@ -36,7 +33,6 @@ export  const styles = StyleSheet.create({
     textField:{
         backgroundColor:"#F3F4F9",
         height:"80%",
-        // backgroundColor:"blue"
       
     
       },
@@ -46,14 +42,7 @@ export  const styles = StyleSheet.create({
         color:"#24272B",
         fontSize:15
       },
-      // textinput:{
-      //   borderwidth:2,
-      //   backgroundColor:"#FFFFFF",
-      //   width:"90%",
-      //   alignItems:"center",
-      //   marginTop:10,
-      //   borderRadius:2 
-      // },
+  
       innerTextField:{
       height:45,
       width:70,
@@ -65,18 +54,15 @@ export  const styles = StyleSheet.create({
     
     signIn:{
         alignItems:"center",
-        // backgroundColor:"orange",
         height:"50%",
         justifyContent:"flex-end"
     
       },
       signInText:{
-        // fontWeight:"bold",
         color:"#000000"
       },
       button:{
-        height:"15%",
-        // backgroundColor:"blue"
+        height:"15%"
       }
 
     })

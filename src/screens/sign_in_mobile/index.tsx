@@ -2,25 +2,26 @@ import { StyleSheet, Text, View, TextInput } from 'react-native'
 import React, { useContext } from 'react'
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { styles } from "./style"
-import Button from "../../components/button/button";
-import Head from "../../components/mainhead/head";
-import { createCox } from "../../context_api/context_api";
+import Button from "../../components/button";
+import Head from "../../components/mainhead";
+import {OnBoardingContext} from "../../context_api/context_api";
 import { SignUpStackParamList } from '../../navigator/naviagtion'
-type LogInSignUpProps = NativeStackScreenProps<SignUpStackParamList, 'signinnumber'>
+type LogInSignUpProps = NativeStackScreenProps<SignUpStackParamList, 'signIn'>
 
-const Signin = ({ navigation }: LogInSignUpProps) => {
-    const useConx = useContext(createCox);
+const SignIn:React.FC<LogInSignUpProps> = (props) => {
+    const{navigation}=props
+    const useConx = useContext(OnBoardingContext);
     const PressHandler = () => {
-        navigation.navigate('confirmotp');
+        navigation.navigate('confirmOtp');
     }
     return (
 
         <View style={styles.mainContainer}>
-            <Head name={"SIGN IN"}  name1='Catalyst' name2='SIGN IN WITH' name3='MOBILE NUMBER'/>
+            <Head signIn={"SIGN IN"}  catalyst='Catalyst' signInWith='SIGN IN WITH' mobileNumber='MOBILE NUMBER'/>
             <View style={styles.textField}>
                 <View>
                 <Text style={styles.textName}>Enter Phone Number</Text>
-                <TextInput style={styles.textInput} value={useConx.phoneno}  onChangeText={(text)=>useConx.setPhoneno(text)} />
+                <TextInput style={styles.textInput} value={useConx.phoneNo}  onChangeText={(text)=>useConx.setPhoneNo(text)} />
                 </View>
                 <View style={styles.button}>
                 <Button name={"GenerateOTP"}  naviagate={PressHandler} backgroundcolor={"#6A1B1E"} color={"white"} />
@@ -34,5 +35,5 @@ const Signin = ({ navigation }: LogInSignUpProps) => {
         </View>
     )
 }
-export default Signin
+export default SignIn
 

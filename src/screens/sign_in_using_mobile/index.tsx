@@ -3,22 +3,21 @@ import React, { useContext } from 'react'
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import { styles } from "./styles"
-import { createCox } from '../../context_api/context_api';
-import Head from '../../components/mainhead/head';
-import Button from '../../components/button/button';
+import {OnBoardingContext} from '../../context_api/context_api';
+import Head from '../../components/mainhead';
+import Button from '../../components/button';
 import { SignUpStackParamList } from "../../navigator/naviagtion";
-import axios from "../../api/baseapi"
 
 
-type LogInSignUpProps = NativeStackScreenProps<SignUpStackParamList, 'signpassword'>
+type LogInSignUpProps = NativeStackScreenProps<SignUpStackParamList, 'signInUsingPassword'>
 
-const Signinusingpassword = () => {
-    const useConx = useContext(createCox);
+const SignInUsingPassword = () => {
+    const useConx = useContext(OnBoardingContext);
     
     return (
 
         <View style={styles.mainContainer}>
-            <Head name={"SIGN IN"}  name1='Catalyst' name2='SIGN IN WITH' name3='CATALYST ID'/>
+            <Head signIn={"SIGN IN"}  catalyst='Catalyst' signInWith='SIGN IN WITH' mobileNumber='CATALYST ID'/>
             <View style={styles.textField}>
                 <Text style={styles.textName}>Enter Username</Text>
                 <TextInput style={styles.textInput} value={useConx.name} onChangeText={(text)=>useConx.setName(text)}/>
@@ -41,5 +40,5 @@ const Signinusingpassword = () => {
         </View>
     )
 }
-export default Signinusingpassword
+export default SignInUsingPassword
 

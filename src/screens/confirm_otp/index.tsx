@@ -2,21 +2,20 @@ import { StyleSheet, Text, View, TextInput, Alert } from 'react-native'
 import React, { useState, useRef, useContext } from 'react'
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import axios from "../../api/baseapi"
-import Head from "../../components/mainhead/head";
-import Button from "../../components/button/button";
+import Head from "../../components/mainhead";
+import Button from "../../components/button";
 import { styles } from './style';
 import { SignUpStackParamList } from "../../navigator/naviagtion";
 import { KeyboardAvoidingScrollView } from 'react-native-keyboard-avoiding-scroll-view';
-import { createCox } from '../../context_api/context_api';
-type LogInSignUpProps = NativeStackScreenProps<SignUpStackParamList, 'confirmotp'>
+import {OnBoardingContext} from '../../context_api/context_api';
+type LogInSignUpProps = NativeStackScreenProps<SignUpStackParamList, 'confirmOtp'>
 
-const ConfirmOtp = ({ navigation }: LogInSignUpProps) => {
-    const { otpPassword, phoneno, dialCode } = useContext(createCox)
+const ConfirmOtp:React.FC<LogInSignUpProps> = (props) => {
+    const{ navigation }=props
+    const { otpPassword, phoneNo, dialCode } = useContext(OnBoardingContext)
     const [validOtp, setValidOtp] = useState("")
-    const useConx = useContext(createCox);
-
-
-
+    const useConx = useContext(OnBoardingContext);
+    
     const input1 = useRef<TextInput>(null);
     const input2 = useRef<TextInput>(null);
     const input3 = useRef<TextInput>(null);
@@ -24,7 +23,7 @@ const ConfirmOtp = ({ navigation }: LogInSignUpProps) => {
 
     const signIn = {
         "countryCode": dialCode,
-        "phoneNumber": phoneno,
+        "phoneNumber": phoneNo,
         "otpPassword": otpPassword
     }
 
@@ -39,7 +38,7 @@ const ConfirmOtp = ({ navigation }: LogInSignUpProps) => {
     const pressHandler = () => {
         if (otpPassword === validOtp) {
 
-            navigation.navigate('signpassword')
+            navigation.navigate('signInUsingPassword')
         } else {
             Alert.alert("Your OTP didn't match")
         }
@@ -65,7 +64,7 @@ const ConfirmOtp = ({ navigation }: LogInSignUpProps) => {
 
         <View style={styles.mainContainer}>
 
-            <Head name={"SIGN IN"} name1='Catalyst' name2='SIGN IN WITH' name3='MOBILE NUMBER' />
+            <Head signIn={"SIGN IN"} catalyst='Catalyst' signInWith='SIGN IN WITH' mobileNumber='MOBILE NUMBER' />
 
 
             <View style={styles.textField}>
