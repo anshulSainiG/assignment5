@@ -59,7 +59,7 @@ const CreateAccount:React.FC<LogInSignUpProps> = (props) => {
       navigation.navigate('signIn')
     }
     else {
-      Alert.alert('fill all deatail password minimum 8')
+      Alert.alert('At least  minimum 8 characters')
     }
   }
   const postSignUpApi = async () => {
@@ -108,7 +108,7 @@ const CreateAccount:React.FC<LogInSignUpProps> = (props) => {
                 </Pressable>
               </View>
               <View style={styles.innerPhonenoTextFieldView}>
-                <TextInput style={styles.inputText1} onChangeText={useConx.setPhoneNo} keyboardType="numeric" />
+                <TextInput style={styles.inputText1} maxLength={10} onChangeText={useConx.setPhoneNo} keyboardType="numeric" />
               </View>
 
             </View>

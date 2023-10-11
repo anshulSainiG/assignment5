@@ -30,6 +30,8 @@ export const styles = StyleSheet.create({
     borderRadius: 4,
     color: "black",
     flexGrow: 1,
+    
+    
 
   },
 
@@ -103,7 +105,8 @@ export const styles = StyleSheet.create({
   innerPhoneNoTextFieldText:{
     color: "black",
      verticalAlign: 'middle',
-      paddingLeft: 15 
+      paddingVertical: 10 ,
+      paddingHorizontal:10
   },
   innerPhonenoTextFieldPressable:{
     backgroundColor: "white", 
@@ -150,13 +153,16 @@ export const styles = StyleSheet.create({
     width: "100%"
   },
   modalMainContainerBtn:{
-    marginVertical: 15 
+    marginVertical: 15 ,
+    
   },
   modalMainContainerText:{
     fontSize: 15,
      fontWeight: "bold",
       color: "black", 
-      textAlign: "center" 
+      textAlign: "center" ,
+    // backgroundColor:'blue'
+      
   }
 }
 )
