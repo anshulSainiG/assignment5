@@ -1,8 +1,14 @@
-import React, { createContext, useState, ReactNode, Dispatch, SetStateAction } from 'react';
+import React, {
+  createContext,
+  useState,
+  ReactNode,
+  Dispatch,
+  SetStateAction,
+} from 'react';
 
 type ContextProps = {
   children: ReactNode;
-}
+};
 
 type ContextState = {
   name: string;
@@ -16,27 +22,27 @@ type ContextState = {
   setPassword: Dispatch<SetStateAction<string>>;
   setOtpPassword: Dispatch<SetStateAction<string>>;
   setDialCode: Dispatch<SetStateAction<string>>;
-}
+};
 
 export const OnBoardingContext = createContext<ContextState>({
-  name: "",
-  phoneNo: "",
-  passwordd: "",
-  otpPassword: "",
-  dialCode: "",
-  setName: () => { },
-  setPhoneNo: () => { },
-  setPassword: () => { },
-  setOtpPassword: () => { },
-  setDialCode: () => { },
+  name: '',
+  phoneNo: '',
+  passwordd: '',
+  otpPassword: '',
+  dialCode: '',
+  setName: () => {},
+  setPhoneNo: () => {},
+  setPassword: () => {},
+  setOtpPassword: () => {},
+  setDialCode: () => {},
 });
 
-export default function Context({ children }: ContextProps) {
+export default function Context({children}: ContextProps) {
   const [name, setName] = useState<string>('');
   const [phoneNo, setPhoneNo] = useState<string>('');
   const [passwordd, setPassword] = useState<string>('');
   const [otpPassword, setOtpPassword] = useState<string>('');
-  const [dialCode, setDialCode] = useState<string>('+1')
+  const [dialCode, setDialCode] = useState<string>('+1');
 
   const value: ContextState = {
     name,
@@ -57,7 +63,3 @@ export default function Context({ children }: ContextProps) {
     </OnBoardingContext.Provider>
   );
 }
-
-
-
-
