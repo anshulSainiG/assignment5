@@ -1,24 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native'
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Context from './src/context_api/context_api';
-import { MyStack } from "./src/navigator/naviagtion";
+import React from 'react';
+import Faq from './src/screens/faq';
+
 // import Splash from "./screens/splash"
 // import Onboarding from "./screens/Onboarding"
-// import Createaccount from "./screens/createaccount/index"
-
 
 // import Postapicreateaccount from './screens/buton/createaccount/postapicreateaccount';
 const App = () => {
-  return <GestureHandlerRootView style={{flex:1}}> 
-  <Context>
-       < MyStack/>
-      {/* <Head/> */}
-      {/* <Postapicreateaccount /> */}
-      </Context>
-     </GestureHandlerRootView>
-    
-  
-}
+  return (
+    <Context>
+      <Faq />
+    </Context>
+  );
+};
 
-export default App
-
+export default App;
