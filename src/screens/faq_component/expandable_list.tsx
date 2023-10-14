@@ -1,6 +1,8 @@
 import React from 'react';
-import {FlatList} from 'react-native';
+import {FlatList, Text} from 'react-native';
 import ExpandableListItem from './expandable _list_item';
+import {View} from 'react-native';
+import {styles} from './style';
 
 type Item = {
   id: string;
@@ -18,11 +20,16 @@ const ExpandableList: React.FC<Props> = ({data}) => {
   };
 
   return (
-    <FlatList
-      data={data}
-      renderItem={renderItem}
-      keyExtractor={item => item.id}
-    />
+    <View>
+      <Text style={styles.headingText}>FAQ</Text>
+      <View style={styles.innerView}>
+        <FlatList
+          data={data}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+        />
+      </View>
+    </View>
   );
 };
 
