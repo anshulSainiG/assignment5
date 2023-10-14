@@ -1,6 +1,8 @@
 import Context from './src/context_api/context_api';
 import React from 'react';
-import Faq from './src/screens/faq';
+
+import {data} from './src/screens/ faq_component/data';
+import ExpandableList from './src/screens/ faq_component/expandable_list';
 
 // import Splash from "./screens/splash"
 // import Onboarding from "./screens/Onboarding"
@@ -9,7 +11,7 @@ import Faq from './src/screens/faq';
 const App = () => {
   return (
     <Context>
-      <Faq />
+      <ExpandableList data={data} />
     </Context>
   );
 };
